@@ -38,7 +38,6 @@
       <video autoplay loop muted playsinline class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover z-0 nav-video" aria-hidden="true">
         <source src="assets/video/grancabrio-folgore.mp4" type="video/mp4">
       </video>
-      <div class="position-absolute top-0 start-0 w-100 h-100 nav-video-overlay"></div>
 
       <div class="container d-flex flex-nowrap align-items-center justify-content-between position-relative z-1">
 

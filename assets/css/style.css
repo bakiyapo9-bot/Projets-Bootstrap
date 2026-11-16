@@ -43,13 +43,6 @@ body {
   transition: padding var(--mas-transition);
 }
 
-/* Voile léger pour garder le texte lisible sur la vidéo */
-.nav-video-overlay {
-  z-index: 0;
-  background: linear-gradient(90deg, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0.55));
-  pointer-events: none;
-}
-
 /* Au défilement, la barre devient plus compacte */
 .site-header.is-scrolled .navbar {
   padding-top: 0.6rem !important;
@@ -190,16 +183,17 @@ body {
 }
 
 .hero-img {
-  height: min(78vh, 720px);
-  min-height: 420px;
+  height: min(68vh, 580px);
+  min-height: 380px;
   object-fit: cover;
 }
 
+/* Dégradé léger uniquement à gauche, derrière le texte : la photo reste claire */
 .hero-carousel .carousel-item::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(11, 15, 25, 0.85) 0%, rgba(11, 15, 25, 0.35) 55%, rgba(11, 15, 25, 0.1) 100%);
+  background: linear-gradient(90deg, rgba(11, 15, 25, 0.7) 0%, rgba(11, 15, 25, 0.25) 40%, transparent 65%);
   pointer-events: none;
 }
 
@@ -215,6 +209,7 @@ body {
   right: 8%;
   bottom: 18%;
   max-width: 620px;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
 }
 
 .hero-kicker {
