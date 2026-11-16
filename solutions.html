@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Solutions de financement Maserati : achat comptant, crédit, location longue durée et simulateur de mensualités.">
+    <title>Solutions | Maserati - Collection exclusive</title>
+    <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-light text-dark" data-page="solutions">
+
+    <a class="visually-hidden-focusable position-absolute top-0 start-0 m-2 btn btn-primary z-3" href="#contenu">Aller au contenu</a>
+    <div id="site-header"></div>
+
+    <main id="contenu">
+      <section class="page-hero text-white">
+        <img src="assets/img/voitures/grancabrio-trofeo.jpg" class="page-hero-img" alt="">
+        <div class="container py-5 position-relative">
+          <nav aria-label="Fil d'Ariane">
+            <ol class="breadcrumb breadcrumb-dark mb-3">
+              <li class="breadcrumb-item"><a href="index.html">Accueil</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Solutions</li>
+            </ol>
+          </nav>
+          <span class="text-uppercase fw-bold small d-block mb-2 tracking-widest text-white-50">Financement</span>
+          <h1 class="display-5 fw-light text-uppercase tracking-wider mb-0">Nos <span class="fw-bold">Solutions</span></h1>
+        </div>
+      </section>
+
+      <!-- Offres -->
+      <section class="container py-5">
+        <div class="row g-4 pt-3">
+          <div class="col-12 col-md-4 reveal">
+            <div class="card h-100 border-0 shadow-sm rounded-4 p-4 solution-card">
+              <div class="service-icon rounded-4 d-flex align-items-center justify-content-center mb-3"><i class="bi bi-wallet2" aria-hidden="true"></i></div>
+              <h2 class="fs-5 fw-bold text-uppercase tracking-wide mb-2">Achat comptant</h2>
+              <p class="small text-secondary">Devenez immédiatement propriétaire de votre Maserati.</p>
+              <ul class="small list-unstyled mb-0 d-flex flex-column gap-2 check-list">
+                <li><i class="bi bi-check-circle-fill text-primary me-2" aria-hidden="true"></i>Remise de 10 % sur votre achat</li>
+                <li><i class="bi bi-check-circle-fill text-primary me-2" aria-hidden="true"></i>Carte grise offerte</li>
+                <li><i class="bi bi-check-circle-fill text-primary me-2" aria-hidden="true"></i>Garantie constructeur 3 ans</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-12 col-md-4 reveal">
+            <div class="card h-100 border-0 shadow rounded-4 p-4 solution-card featured position-relative">
+              <span class="badge bg-primary rounded-pill position-absolute top-0 start-50 translate-middle px-3 py-2"><i class="bi bi-star-fill me-1" aria-hidden="true"></i>Le plus choisi</span>
+              <div class="service-icon rounded-4 d-flex align-items-center justify-content-center mb-3"><i class="bi bi-bank" aria-hidden="true"></i></div>
+              <h2 class="fs-5 fw-bold text-uppercase tracking-wide mb-2">Crédit classique</h2>
+              <p class="small text-secondary">Financez votre véhicule sur 12 à 84 mois à taux fixe.</p>
+              <ul class="small list-unstyled mb-0 d-flex flex-column gap-2">
+                <li><i class="bi bi-check-circle-fill text-primary me-2" aria-hidden="true"></i>Taux fixe dès 4,9 %</li>
+                <li><i class="bi bi-check-circle-fill text-primary me-2" aria-hidden="true"></i>Apport libre</li>
+                <li><i class="bi bi-check-circle-fill text-primary me-2" aria-hidden="true"></i>Réponse de principe sous 48 h</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-12 col-md-4 reveal">
+            <div class="card h-100 border-0 shadow-sm rounded-4 p-4 solution-card">
+              <div class="service-icon rounded-4 d-flex align-items-center justify-content-center mb-3"><i class="bi bi-key" aria-hidden="true"></i></div>
+              <h2 class="fs-5 fw-bold text-uppercase tracking-wide mb-2">Location (LLD)</h2>
+              <p class="small text-secondary">Roulez en Maserati sans vous soucier de la revente.</p>
+              <ul class="small list-unstyled mb-0 d-flex flex-column gap-2">
+                <li><i class="bi bi-check-circle-fill text-primary me-2" aria-hidden="true"></i>Entretien inclus</li>
+                <li><i class="bi bi-check-circle-fill text-primary me-2" aria-hidden="true"></i>Assurance optionnelle</li>
+                <li><i class="bi bi-check-circle-fill text-primary me-2" aria-hidden="true"></i>Nouveau modèle en fin de contrat</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Simulateur -->
+      <section class="container pb-5 mb-4" id="simulateur">
+        <div class="text-center mb-5 reveal">
+          <span class="text-primary text-uppercase fw-bold small d-block mb-2 tracking-widest">Outil en ligne</span>
+          <h2 class="fw-light text-dark text-uppercase display-6 tracking-wider">Simulateur de <span class="fw-bold">mensualités</span></h2>
+          <div class="bg-primary rounded-pill mx-auto mt-3 section-bar"></div>
+        </div>
+
+        <div class="card border-0 shadow-lg rounded-4 overflow-hidden reveal">
+          <div class="row g-0">
+            <div class="col-12 col-lg-7 p-4 p-sm-5 bg-white">
+              <form id="simulator" novalidate>
+                <fieldset class="mb-4">
+                  <legend class="form-label small fw-semibold text-secondary fs-6">Type de financement</legend>
+                  <div class="btn-group w-100" role="group">
+                    <input type="radio" class="btn-check" name="simType" id="simCredit" value="credit" checked>
+                    <label class="btn btn-outline-dark rounded-start-pill" for="simCredit"><i class="bi bi-bank me-1" aria-hidden="true"></i>Crédit</label>
+                    <input type="radio" class="btn-check" name="simType" id="simLld" value="lld">
+                    <label class="btn btn-outline-dark rounded-end-pill" for="simLld"><i class="bi bi-key me-1" aria-hidden="true"></i>Location (LLD)</label>
+                  </div>
+                </fieldset>
+
+                <div class="d-flex gap-3 align-items-center mb-4">
+                  <img src="" alt="" class="rounded-3 object-fit-cover sim-thumb" id="simThumb">
+                  <div class="flex-grow-1">
+                    <label for="simModel" class="form-label small fw-semibold text-secondary">Modèle</label>
+                    <select class="form-select rounded-pill px-3 shadow-none" id="simModel"></select>
+                  </div>
+                </div>
+
+                <div class="mb-4">
+                  <label for="simApport" class="form-label small fw-semibold text-secondary d-flex justify-content-between">
+                    <span>Apport</span><output id="simApportValue" for="simApport" class="fw-bold text-dark"></output>
+                  </label>
+                  <input type="range" class="form-range" id="simApport" min="0" max="60" step="5" value="20">
+                </div>
+                <div class="mb-0">
+                  <label for="simDuree" class="form-label small fw-semibold text-secondary d-flex justify-content-between">
+                    <span>Durée</span><output id="simDureeValue" for="simDuree" class="fw-bold text-dark"></output>
+                  </label>
+                  <input type="range" class="form-range" id="simDuree" min="12" max="84" step="12" value="48">
+                </div>
+              </form>
+            </div>
+
+            <div class="col-12 col-lg-5 p-4 p-sm-5 bg-dark text-white d-flex flex-column justify-content-center">
+              <span class="text-uppercase small text-white-50 tracking-wider text-center" id="simLabel">Votre mensualité estimée</span>
+              <output class="monthly-result fw-bold my-2 text-center d-block" id="simResult" aria-live="polite">-</output>
+
+              <div class="sim-bar rounded-pill overflow-hidden d-flex my-3" aria-hidden="true">
+                <div class="bg-primary" id="simBarCapital"></div>
+                <div class="bg-warning" id="simBarInterest"></div>
+              </div>
+
+              <dl class="row small mb-0 sim-details">
+                <dt class="col-7 fw-normal text-white-50"><i class="bi bi-square-fill text-primary me-1" aria-hidden="true"></i><span id="simCapitalLabel">Montant financé</span></dt>
+                <dd class="col-5 text-end mb-1" id="simCapital"></dd>
+                <dt class="col-7 fw-normal text-white-50"><i class="bi bi-square-fill text-warning me-1" aria-hidden="true"></i><span id="simInterestLabel">Coût des intérêts</span></dt>
+                <dd class="col-5 text-end mb-1" id="simInterest"></dd>
+                <dt class="col-7 fw-normal text-white-50">Apport</dt>
+                <dd class="col-5 text-end mb-1" id="simApportAmount"></dd>
+                <dt class="col-7 fw-bold">Coût total</dt>
+                <dd class="col-5 text-end fw-bold mb-0" id="simTotal"></dd>
+              </dl>
+
+              <p class="small text-white-50 mt-4 mb-3" style="font-size: 0.7rem;" id="simLegal"></p>
+              <a href="contact.html?sujet=financement" class="btn btn-primary rounded-pill px-4 align-self-center" id="simCta">
+                <i class="bi bi-send me-2" aria-hidden="true"></i>Demander une offre
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/utils.js"></script>
+    <script src="assets/js/layout.js"></script>
+    <script src="assets/js/components.js"></script>
+    <script src="assets/js/pages/solutions.js"></script>
+</body>
+</html>

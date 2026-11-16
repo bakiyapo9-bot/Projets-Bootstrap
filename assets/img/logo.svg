@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Emblème trident">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1b2a4a"/>
+      <stop offset="1" stop-color="#0b0f19"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f3d58a"/>
+      <stop offset=".5" stop-color="#c9a24d"/>
+      <stop offset="1" stop-color="#8a6a25"/>
+    </linearGradient>
+    <linearGradient id="silver" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#c7cfdb"/>
+    </linearGradient>
+  </defs>
+  <!-- Écusson ovale -->
+  <ellipse cx="50" cy="50" rx="40" ry="47" fill="url(#bg)" stroke="url(#gold)" stroke-width="4"/>
+  <ellipse cx="50" cy="50" rx="34" ry="41" fill="none" stroke="#c9a24d" stroke-opacity=".35" stroke-width="1"/>
+  <!-- Trident -->
+  <g fill="url(#silver)">
+    <path d="M50 12 L57 30 L53.5 28 L53.5 46 L46.5 46 L46.5 28 L43 30 Z"/>
+    <path d="M28 22 L34 37 L31 36 C31 46 38 50 46.5 50 L46.5 55.5 C35 55.5 25.5 49 25.5 36.5 L22.5 37.5 Z"/>
+    <path d="M72 22 L66 37 L69 36 C69 46 62 50 53.5 50 L53.5 55.5 C65 55.5 74.5 49 74.5 36.5 L77.5 37.5 Z"/>
+    <rect x="46.5" y="45" width="7" height="42" rx="2"/>
+    <rect x="37" y="61" width="26" height="4.5" rx="2.25" fill="url(#gold)"/>
+  </g>
+</svg>

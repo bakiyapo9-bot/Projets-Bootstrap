@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Services Maserati : essai routier, entretien, personnalisation, livraison, reprise et assistance 24h/24.">
+    <title>Services | Maserati - Collection exclusive</title>
+    <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-light text-dark" data-page="services">
+
+    <a class="visually-hidden-focusable position-absolute top-0 start-0 m-2 btn btn-primary z-3" href="#contenu">Aller au contenu</a>
+    <div id="site-header"></div>
+
+    <main id="contenu">
+      <section class="page-hero text-white">
+        <img src="assets/img/voitures/levante.jpg" class="page-hero-img" alt="">
+        <div class="container py-5 position-relative">
+          <nav aria-label="Fil d'Ariane">
+            <ol class="breadcrumb breadcrumb-dark mb-3">
+              <li class="breadcrumb-item"><a href="index.html">Accueil</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Services</li>
+            </ol>
+          </nav>
+          <span class="text-uppercase fw-bold small d-block mb-2 tracking-widest text-white-50">À votre service</span>
+          <h1 class="display-5 fw-light text-uppercase tracking-wider mb-0">Nos <span class="fw-bold">Services</span></h1>
+        </div>
+      </section>
+
+      <!-- Cartes de services (générées par services.js) -->
+      <section class="container py-5">
+        <div class="row g-4" id="serviceList"></div>
+      </section>
+
+      <!-- Parcours client -->
+      <section class="bg-white py-5">
+        <div class="container py-4">
+          <div class="text-center mb-5 reveal">
+            <span class="text-primary text-uppercase fw-bold small d-block mb-2 tracking-widest">Simple et transparent</span>
+            <h2 class="fw-light text-dark text-uppercase display-6 tracking-wider">Votre <span class="fw-bold">parcours</span></h2>
+            <div class="bg-primary rounded-pill mx-auto mt-3 section-bar"></div>
+          </div>
+          <ol class="row g-4 list-unstyled steps mb-0">
+            <li class="col-12 col-sm-6 col-lg-3 reveal">
+              <div class="step text-center">
+                <span class="step-number">1</span>
+                <i class="bi bi-search-heart fs-1 text-primary d-block mb-2" aria-hidden="true"></i>
+                <h3 class="fs-6 fw-bold text-uppercase">Choisissez</h3>
+                <p class="small text-secondary mb-0">Explorez la collection et ajoutez vos modèles préférés en favoris.</p>
+              </div>
+            </li>
+            <li class="col-12 col-sm-6 col-lg-3 reveal">
+              <div class="step text-center">
+                <span class="step-number">2</span>
+                <i class="bi bi-speedometer2 fs-1 text-primary d-block mb-2" aria-hidden="true"></i>
+                <h3 class="fs-6 fw-bold text-uppercase">Essayez</h3>
+                <p class="small text-secondary mb-0">Réservez un essai routier gratuit avec un conseiller dédié.</p>
+              </div>
+            </li>
+            <li class="col-12 col-sm-6 col-lg-3 reveal">
+              <div class="step text-center">
+                <span class="step-number">3</span>
+                <i class="bi bi-file-earmark-check fs-1 text-primary d-block mb-2" aria-hidden="true"></i>
+                <h3 class="fs-6 fw-bold text-uppercase">Financez</h3>
+                <p class="small text-secondary mb-0">Choisissez la solution adaptée : comptant, crédit ou location.</p>
+              </div>
+            </li>
+            <li class="col-12 col-sm-6 col-lg-3 reveal">
+              <div class="step text-center">
+                <span class="step-number">4</span>
+                <i class="bi bi-key-fill fs-1 text-primary d-block mb-2" aria-hidden="true"></i>
+                <h3 class="fs-6 fw-bold text-uppercase">Roulez</h3>
+                <p class="small text-secondary mb-0">Recevez votre Maserati en concession ou à domicile.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="container py-5 my-4">
+        <div class="row g-5">
+          <div class="col-12 col-lg-4 reveal">
+            <span class="text-primary text-uppercase fw-bold small d-block mb-2 tracking-widest">Questions fréquentes</span>
+            <h2 class="fw-light text-uppercase display-6 tracking-wider mb-3"><span class="fw-bold">FAQ</span></h2>
+            <p class="text-secondary">Vous ne trouvez pas votre réponse ? Notre équipe vous répond sous 48 h.</p>
+            <a href="contact.html" class="btn btn-dark rounded-pill px-4"><i class="bi bi-chat-dots me-2" aria-hidden="true"></i>Nous contacter</a>
+          </div>
+          <div class="col-12 col-lg-8 reveal">
+            <label for="faqSearch" class="visually-hidden">Rechercher dans la FAQ</label>
+            <div class="input-group mb-3">
+              <span class="input-group-text bg-white border-end-0 rounded-start-pill"><i class="bi bi-search" aria-hidden="true"></i></span>
+              <input type="search" class="form-control border-start-0 rounded-end-pill shadow-none" id="faqSearch" placeholder="Rechercher une question...">
+            </div>
+            <div class="accordion accordion-flush rounded-4 overflow-hidden shadow-sm" id="faq"></div>
+            <p class="text-secondary small mt-3 d-none" id="faqEmpty" role="status">Aucune question ne correspond à votre recherche.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/utils.js"></script>
+    <script src="assets/js/layout.js"></script>
+    <script src="assets/js/components.js"></script>
+    <script src="assets/js/pages/services.js"></script>
+</body>
+</html>

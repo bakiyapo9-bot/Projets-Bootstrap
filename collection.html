@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="La collection Maserati : SUV, berlines, coupés, cabriolets et supercars. Filtrez, comparez et réservez un essai.">
+    <title>Collection | Maserati - Collection exclusive</title>
+    <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-light text-dark" data-page="collection">
+
+    <a class="visually-hidden-focusable position-absolute top-0 start-0 m-2 btn btn-primary z-3" href="#contenu">Aller au contenu</a>
+    <div id="site-header"></div>
+
+    <main id="contenu">
+      <section class="page-hero text-white">
+        <img src="assets/img/voitures/granturismo-trofeo.jpg" class="page-hero-img" alt="">
+        <div class="container py-5 position-relative">
+          <nav aria-label="Fil d'Ariane">
+            <ol class="breadcrumb breadcrumb-dark mb-3">
+              <li class="breadcrumb-item"><a href="index.html">Accueil</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Collection</li>
+            </ol>
+          </nav>
+          <span class="text-uppercase fw-bold small d-block mb-2 tracking-widest text-white-50">Exclusive Line</span>
+          <h1 class="display-5 fw-light text-uppercase tracking-wider mb-0">La Collection <span class="fw-bold">Maserati</span></h1>
+        </div>
+      </section>
+
+      <section class="container py-5">
+        <!-- Barre d'outils -->
+        <div class="card border-0 shadow-sm rounded-4 p-3 p-md-4 mb-4 toolbar">
+          <div class="row g-3 align-items-center">
+            <div class="col-12 col-lg-4">
+              <label for="pageSearch" class="visually-hidden">Rechercher un modèle</label>
+              <div class="input-group">
+                <span class="input-group-text bg-white border-end-0 rounded-start-pill"><i class="bi bi-search" aria-hidden="true"></i></span>
+                <input type="search" class="form-control border-start-0 rounded-end-pill shadow-none" id="pageSearch" placeholder="Nom, carrosserie, moteur..." list="modelSuggestions">
+              </div>
+            </div>
+            <div class="col-12 col-lg-5">
+              <div class="d-flex flex-wrap gap-2" role="group" aria-label="Filtrer par motorisation" id="filters">
+                <button type="button" class="btn btn-sm btn-outline-dark rounded-pill px-3 filter-btn" data-filter="tous">Tous</button>
+                <button type="button" class="btn btn-sm btn-outline-dark rounded-pill px-3 filter-btn" data-filter="hybride"><i class="bi bi-recycle me-1" aria-hidden="true"></i>Hybride</button>
+                <button type="button" class="btn btn-sm btn-outline-dark rounded-pill px-3 filter-btn" data-filter="thermique"><i class="bi bi-fuel-pump-fill me-1" aria-hidden="true"></i>Thermique</button>
+                <button type="button" class="btn btn-sm btn-outline-dark rounded-pill px-3 filter-btn" data-filter="electrique"><i class="bi bi-lightning-charge-fill me-1" aria-hidden="true"></i>Électrique</button>
+                <button type="button" class="btn btn-sm btn-outline-danger rounded-pill px-3 filter-btn" data-filter="favoris"><i class="bi bi-heart-fill me-1" aria-hidden="true"></i>Favoris</button>
+              </div>
+            </div>
+            <div class="col-12 col-lg-3">
+              <label for="sortSelect" class="visually-hidden">Trier</label>
+              <select class="form-select rounded-pill shadow-none" id="sortSelect">
+                <option value="prix-asc">Prix croissant</option>
+                <option value="prix-desc">Prix décroissant</option>
+                <option value="puissance-desc">Puissance</option>
+                <option value="accel-asc">Accélération</option>
+                <option value="nom-asc">Nom (A-Z)</option>
+              </select>
+            </div>
+          </div>
+          <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mt-3 small text-secondary">
+            <span id="resultCount" role="status" aria-live="polite"></span>
+            <span><i class="bi bi-info-circle me-1" aria-hidden="true"></i>Activez « Comparer » sur 2 ou 3 modèles pour les comparer.</span>
+          </div>
+        </div>
+
+        <div class="row g-4" id="carList"></div>
+
+        <div class="text-center py-5 d-none" id="emptyState">
+          <i class="bi bi-search display-4 text-secondary" aria-hidden="true"></i>
+          <p class="text-secondary mt-3 mb-3" id="emptyText">Aucun modèle ne correspond à votre recherche.</p>
+          <button type="button" class="btn btn-dark rounded-pill px-4" id="resetFilters">Afficher toute la collection</button>
+        </div>
+      </section>
+    </main>
+
+    <!-- Barre de comparaison -->
+    <div class="compare-bar position-fixed bottom-0 start-50 translate-middle-x mb-3 bg-dark text-white rounded-pill shadow-lg px-3 py-2 d-flex align-items-center gap-3" id="compareBar" hidden>
+      <span class="small"><i class="bi bi-layout-three-columns me-1" aria-hidden="true"></i><span id="compareCount">0</span>/3 sélectionné(s)</span>
+      <button type="button" class="btn btn-primary btn-sm rounded-pill px-3" id="compareOpen">Comparer</button>
+      <button type="button" class="btn btn-outline-light btn-sm rounded-pill px-3" id="compareClear">Effacer</button>
+    </div>
+
+    <!-- Modal de comparaison -->
+    <div class="modal fade" id="compareModal" tabindex="-1" aria-labelledby="compareTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-xl modal-fullscreen-lg-down">
+        <div class="modal-content rounded-4 border-0">
+          <div class="modal-header border-0">
+            <h2 class="modal-title fs-5 fw-bold text-uppercase tracking-wide" id="compareTitle"><i class="bi bi-layout-three-columns me-2 text-primary" aria-hidden="true"></i>Comparateur</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+          </div>
+          <div class="modal-body pt-0">
+            <div class="table-responsive" id="compareTable"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="site-footer"></div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/utils.js"></script>
+    <script src="assets/js/layout.js"></script>
+    <script src="assets/js/components.js"></script>
+    <script src="assets/js/pages/collection.js"></script>
+</body>
+</html>

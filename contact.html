@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contactez la concession Maserati : demande d'essai, de financement, d'entretien ou de personnalisation.">
+    <title>Contact | Maserati - Collection exclusive</title>
+    <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-light text-dark" data-page="contact">
+
+    <a class="visually-hidden-focusable position-absolute top-0 start-0 m-2 btn btn-primary z-3" href="#contenu">Aller au contenu</a>
+    <div id="site-header"></div>
+
+    <main id="contenu">
+      <section class="page-hero text-white">
+        <img src="assets/img/voitures/grecale-gt.jpg" class="page-hero-img" alt="">
+        <div class="container py-5 position-relative">
+          <nav aria-label="Fil d'Ariane">
+            <ol class="breadcrumb breadcrumb-dark mb-3">
+              <li class="breadcrumb-item"><a href="index.html">Accueil</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Contact</li>
+            </ol>
+          </nav>
+          <span class="text-uppercase fw-bold small d-block mb-2 tracking-widest text-white-50">Parlons de votre projet</span>
+          <h1 class="display-5 fw-light text-uppercase tracking-wider mb-0">Nous <span class="fw-bold">contacter</span></h1>
+        </div>
+      </section>
+
+      <section class="container py-5">
+        <div class="row g-4">
+
+          <!-- Coordonnées -->
+          <aside class="col-12 col-lg-4">
+            <div class="d-flex flex-column gap-3">
+              <div class="card border-0 shadow-sm rounded-4 p-4">
+                <div class="d-flex gap-3 align-items-start">
+                  <div class="feature-icon"><i class="bi bi-geo-alt-fill" aria-hidden="true"></i></div>
+                  <div><h2 class="fs-6 fw-bold text-uppercase mb-1">Showroom</h2><p class="small text-secondary mb-0">123 Rue du Trident<br>Abidjan, Côte d'Ivoire</p></div>
+                </div>
+              </div>
+              <div class="card border-0 shadow-sm rounded-4 p-4">
+                <div class="d-flex gap-3 align-items-start">
+                  <div class="feature-icon"><i class="bi bi-telephone-fill" aria-hidden="true"></i></div>
+                  <div><h2 class="fs-6 fw-bold text-uppercase mb-1">Téléphone</h2><p class="small text-secondary mb-0">+225 07 00 00 00 00</p></div>
+                </div>
+              </div>
+              <div class="card border-0 shadow-sm rounded-4 p-4">
+                <div class="d-flex gap-3 align-items-start">
+                  <div class="feature-icon"><i class="bi bi-envelope-fill" aria-hidden="true"></i></div>
+                  <div><h2 class="fs-6 fw-bold text-uppercase mb-1">Email</h2><p class="small text-secondary mb-0">contact@maserati-collection.ci</p></div>
+                </div>
+              </div>
+              <div class="card border-0 shadow-sm rounded-4 p-4">
+                <div class="d-flex gap-3 align-items-start">
+                  <div class="feature-icon"><i class="bi bi-clock-fill" aria-hidden="true"></i></div>
+                  <div class="flex-grow-1">
+                    <h2 class="fs-6 fw-bold text-uppercase mb-1">Horaires</h2>
+                    <p class="small text-secondary mb-2">Lundi - Samedi : 9h - 19h<br>Dimanche : fermé</p>
+                    <span class="badge rounded-pill" id="openStatus" role="status"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </aside>
+
+          <!-- Formulaire -->
+          <div class="col-12 col-lg-8">
+            <div class="card border-0 shadow-lg bg-white rounded-4 overflow-hidden">
+              <div class="card-header bg-dark text-white text-center py-4 border-0">
+                <h2 class="fw-bold text-uppercase tracking-wider mb-1 fs-5">Formulaire de contact</h2>
+                <p class="text-white-50 small mb-0">Restons en contact pour votre futur projet automobile</p>
+              </div>
+              <div class="bg-primary-subtle text-primary text-center py-2 px-3 small fw-medium">
+                <i class="bi bi-gift-fill me-1" aria-hidden="true"></i> Pour une voiture achetée, nous vous offrons une réduction de 10%.
+              </div>
+              <div class="card-body p-4 p-sm-5">
+
+                <div class="alert alert-success rounded-4 d-none d-flex gap-2 align-items-start" id="formSuccess" role="alert" tabindex="-1">
+                  <i class="bi bi-check-circle-fill fs-5" aria-hidden="true"></i>
+                  <div><strong>Merci <span id="successName"></span> !</strong> Votre message a bien été envoyé. Un conseiller vous recontactera sous 48 h.</div>
+                </div>
+
+                <div class="alert alert-info rounded-4 small d-none d-flex justify-content-between align-items-center gap-2" id="draftNotice">
+                  <span><i class="bi bi-floppy-fill me-1" aria-hidden="true"></i>Votre brouillon a été restauré.</span>
+                  <button type="button" class="btn btn-sm btn-outline-info rounded-pill" id="clearDraft">Effacer</button>
+                </div>
+
+                <form id="contactForm" novalidate>
+                  <div class="row g-3 mb-3">
+                    <div class="col-12 col-sm-6">
+                      <label for="selectSujet" class="form-label small fw-semibold text-secondary">Sujet</label>
+                      <select class="form-select rounded-pill px-3 shadow-none contact-input" id="selectSujet" name="sujet" required>
+                        <option value="" selected disabled>Choisir un sujet...</option>
+                        <option value="information">Demande d'information</option>
+                        <option value="essai">Réserver un essai</option>
+                        <option value="financement">Financement</option>
+                        <option value="entretien">Entretien</option>
+                        <option value="personnalisation">Personnalisation</option>
+                      </select>
+                      <div class="invalid-feedback">Veuillez choisir un sujet.</div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                      <label for="selectModele" class="form-label small fw-semibold text-secondary">Modèle qui vous intéresse</label>
+                      <select class="form-select rounded-pill px-3 shadow-none contact-input" id="selectModele" name="modele" required>
+                        <option value="" selected disabled>Choisir un modèle...</option>
+                      </select>
+                      <div class="invalid-feedback">Veuillez choisir un modèle.</div>
+                    </div>
+                  </div>
+
+                  <div class="row g-3 mb-3">
+                    <div class="col-12 col-sm-6">
+                      <label for="inputNom" class="form-label small fw-semibold text-secondary">Nom</label>
+                      <input type="text" class="form-control rounded-pill px-3 shadow-none contact-input" id="inputNom" name="nom" placeholder="Entrez votre nom" autocomplete="family-name" minlength="2" maxlength="60" required>
+                      <div class="invalid-feedback">Veuillez saisir votre nom (2 caractères minimum).</div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                      <label for="inputPrenom" class="form-label small fw-semibold text-secondary">Prénom</label>
+                      <input type="text" class="form-control rounded-pill px-3 shadow-none contact-input" id="inputPrenom" name="prenom" placeholder="Entrez votre prénom" autocomplete="given-name" minlength="2" maxlength="60" required>
+                      <div class="invalid-feedback">Veuillez saisir votre prénom (2 caractères minimum).</div>
+                    </div>
+                  </div>
+
+                  <div class="row g-3 mb-3">
+                    <div class="col-12 col-sm-6">
+                      <label for="inputEmail" class="form-label small fw-semibold text-secondary">Email</label>
+                      <input type="email" class="form-control rounded-pill px-3 shadow-none contact-input" id="inputEmail" name="email" placeholder="nom@exemple.com" autocomplete="email" required>
+                      <div class="invalid-feedback">Veuillez saisir une adresse email valide.</div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                      <label for="inputTel" class="form-label small fw-semibold text-secondary">Téléphone</label>
+                      <input type="tel" class="form-control rounded-pill px-3 shadow-none contact-input" id="inputTel" name="telephone" placeholder="+225 07 00 00 00 00" autocomplete="tel" pattern="^\+?[0-9\s.\-]{8,20}$" required>
+                      <div class="invalid-feedback">Veuillez saisir un numéro valide (8 chiffres minimum).</div>
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="inputAddress" class="form-label small fw-semibold text-secondary">Adresse</label>
+                    <input type="text" class="form-control rounded-pill px-3 shadow-none contact-input" id="inputAddress" name="adresse" placeholder="123 Rue du Trident" autocomplete="street-address" required>
+                    <div class="invalid-feedback">Veuillez saisir votre adresse.</div>
+                  </div>
+
+                  <div class="row g-3 mb-3">
+                    <div class="col-12 col-sm-6">
+                      <label for="inputVille" class="form-label small fw-semibold text-secondary">Ville</label>
+                      <input type="text" class="form-control rounded-pill px-3 shadow-none contact-input" id="inputVille" name="ville" placeholder="Votre ville" autocomplete="address-level2" required>
+                      <div class="invalid-feedback">Veuillez saisir votre ville.</div>
+                    </div>
+                    <div class="col-12 col-sm-6">
+                      <label for="selectPays" class="form-label small fw-semibold text-secondary">Pays</label>
+                      <select class="form-select rounded-pill px-3 shadow-none contact-input" id="selectPays" name="pays" required>
+                        <option value="" selected disabled>Choisir...</option>
+                        <option value="CI">Côte d'Ivoire</option>
+                        <option value="FR">France</option>
+                        <option value="ES">Espagne</option>
+                      </select>
+                      <div class="invalid-feedback">Veuillez choisir un pays.</div>
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="inputMessage" class="form-label small fw-semibold text-secondary d-flex justify-content-between">
+                      <span>Message</span><span class="fw-normal" id="messageCounter" aria-live="polite">0 / 1000</span>
+                    </label>
+                    <textarea class="form-control px-3 shadow-none contact-input" id="inputMessage" name="message" rows="5" placeholder="Votre projet, vos questions, une demande d'essai..." minlength="10" maxlength="1000" required></textarea>
+                    <div class="invalid-feedback">Votre message doit contenir au moins 10 caractères.</div>
+                  </div>
+
+                  <div class="form-check mb-4">
+                    <input class="form-check-input" type="checkbox" id="checkRgpd" name="rgpd" required>
+                    <label class="form-check-label small text-secondary" for="checkRgpd">J'accepte que mes données soient utilisées pour être recontacté(e).</label>
+                    <div class="invalid-feedback">Vous devez accepter pour envoyer votre message.</div>
+                  </div>
+
+                  <div class="d-grid mt-4">
+                    <button type="submit" class="btn btn-primary rounded-pill py-2 fw-medium text-uppercase tracking-wider shadow-sm fs-7" id="submitBtn">
+                      <span class="btn-label"><i class="bi bi-send-fill me-2" aria-hidden="true"></i>Envoyer le message</span>
+                      <span class="btn-loading d-none"><span class="spinner-border spinner-border-sm me-2" aria-hidden="true"></span>Envoi en cours...</span>
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/utils.js"></script>
+    <script src="assets/js/layout.js"></script>
+    <script src="assets/js/components.js"></script>
+    <script src="assets/js/pages/contact.js"></script>
+</body>
+</html>

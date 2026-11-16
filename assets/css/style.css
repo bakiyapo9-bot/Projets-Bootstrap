@@ -1,0 +1,677 @@
+/* ==========================================================================
+   Maserati - Collection exclusive
+   Styles complémentaires à Bootstrap 5.3 (css/bootstrap.min.css)
+   Sommaire :
+     1. Variables & base          6. Cartes voitures
+     2. Utilitaires               7. Services, étapes, solutions
+     3. Barre de navigation       8. À propos (frise, galerie)
+     4. Bandeaux de page          9. Contact, footer, divers
+     5. Carrousel d'accueil      10. Animations & accessibilité
+   ========================================================================== */
+
+/* ---------- 1. Variables & base ---------- */
+:root {
+  --mas-dark: #0b0f19;
+  --mas-gold: #c9a24d;
+  --mas-transition: 0.4s ease;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* ---------- 2. Utilitaires ---------- */
+.tracking-wide    { letter-spacing: 0.05em; }
+.tracking-wider   { letter-spacing: 0.1em; }
+.tracking-widest  { letter-spacing: 0.2em; }
+.fs-7             { font-size: 0.85rem; }
+.price-label      { font-size: 0.7rem; }
+.btn-xs-text      { font-size: 0.75rem; }
+.section-bar      { width: 50px; height: 2px; }
+
+/* ---------- 3. Barre de navigation (vidéo en fond, comme au départ) ---------- */
+.site-header {
+  z-index: 1030;
+}
+
+.site-header .navbar {
+  transition: padding var(--mas-transition);
+}
+
+/* Voile léger pour garder le texte lisible sur la vidéo */
+.nav-video-overlay {
+  z-index: 0;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0.55));
+  pointer-events: none;
+}
+
+/* Au défilement, la barre devient plus compacte */
+.site-header.is-scrolled .navbar {
+  padding-top: 0.6rem !important;
+  padding-bottom: 0.6rem !important;
+}
+
+.brand-emblem {
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.5));
+  transition: transform var(--mas-transition);
+}
+
+.brand:hover .brand-emblem {
+  transform: rotate(-8deg) scale(1.05);
+}
+
+.brand-text {
+  letter-spacing: 0.15em;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.nav-desktop .nav-link {
+  position: relative;
+  white-space: nowrap;
+  padding-inline: 0.65rem;
+  opacity: 0.85;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.6);
+  transition: opacity var(--mas-transition);
+}
+
+.nav-desktop .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0.5rem;
+  right: 0.5rem;
+  bottom: 0.2rem;
+  height: 2px;
+  border-radius: 2px;
+  background-color: var(--bs-primary);
+  transform: scaleX(0);
+  transition: transform var(--mas-transition);
+}
+
+.nav-desktop .nav-link:hover,
+.nav-desktop .nav-link.active {
+  opacity: 1;
+}
+
+.nav-desktop .nav-link:hover::after,
+.nav-desktop .nav-link.active::after {
+  transform: scaleX(1);
+}
+
+.nav-mobile .nav-link.active {
+  color: var(--bs-primary) !important;
+}
+
+.search-input::placeholder {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+#menuMobileCollapse .search-input::placeholder {
+  color: var(--bs-secondary-color);
+}
+
+.nav-fav {
+  width: 38px;
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-fav .bi {
+  color: #ff6b81;
+}
+
+.nav-fav:hover .bi {
+  color: #fff;
+}
+
+/* ---------- 4. Bandeaux de page (pages internes) ---------- */
+.page-hero {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--mas-dark);
+  min-height: 280px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.page-hero-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.55;
+  transform: scale(1.05);
+  animation: heroZoom 12s ease-out forwards;
+}
+
+.page-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(11, 15, 25, 0.95), rgba(11, 15, 25, 0.2));
+}
+
+.page-hero .container {
+  z-index: 1;
+}
+
+@keyframes heroZoom {
+  to { transform: scale(1); }
+}
+
+.breadcrumb-dark .breadcrumb-item,
+.breadcrumb-dark .breadcrumb-item a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+}
+
+.breadcrumb-dark .breadcrumb-item a:hover {
+  color: #fff;
+}
+
+.breadcrumb-dark .breadcrumb-item.active {
+  color: #fff;
+}
+
+.breadcrumb-dark .breadcrumb-item + .breadcrumb-item::before {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* ---------- 5. Carrousel d'accueil ---------- */
+.hero-carousel {
+  background-color: var(--mas-dark);
+}
+
+.hero-img {
+  height: min(78vh, 720px);
+  min-height: 420px;
+  object-fit: cover;
+}
+
+.hero-carousel .carousel-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(11, 15, 25, 0.85) 0%, rgba(11, 15, 25, 0.35) 55%, rgba(11, 15, 25, 0.1) 100%);
+  pointer-events: none;
+}
+
+.hero-carousel .carousel-control-prev,
+.hero-carousel .carousel-control-next {
+  width: 6%;
+  z-index: 3;
+}
+
+.hero-carousel .carousel-caption {
+  z-index: 2;
+  left: 9%;
+  right: 8%;
+  bottom: 18%;
+  max-width: 620px;
+}
+
+.hero-kicker {
+  color: #8bb9ff;
+}
+
+.carousel-pause {
+  width: 36px;
+  height: 36px;
+}
+
+/* ---------- 6. Cartes voitures ---------- */
+.car-card {
+  transition: transform var(--mas-transition), box-shadow var(--mas-transition);
+}
+
+.car-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.3) !important;
+}
+
+.car-media {
+  height: 220px;
+}
+
+.car-media img {
+  transition: transform 0.6s ease;
+}
+
+.car-card:hover .car-media img {
+  transform: scale(1.08);
+}
+
+.car-media-overlay {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.55), transparent 60%);
+  pointer-events: none;
+}
+
+.car-badge {
+  white-space: nowrap;
+}
+
+.car-quickspecs {
+  gap: 0.5rem;
+}
+
+.fav-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.45);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 2;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.fav-btn:hover,
+.fav-btn:focus-visible {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  transform: scale(1.1);
+}
+
+.fav-btn.is-active {
+  color: #ff4d6d;
+}
+
+.fav-btn.is-active .bi {
+  animation: heartBeat 0.4s ease;
+}
+
+.fav-btn-lg {
+  width: 48px;
+  height: 48px;
+  font-size: 1.25rem;
+}
+
+@keyframes heartBeat {
+  50% { transform: scale(1.35); }
+}
+
+.filter-btn.active {
+  color: #fff;
+}
+
+.filter-btn.btn-outline-dark.active {
+  background-color: var(--bs-dark);
+}
+
+.filter-btn.btn-outline-danger.active {
+  background-color: var(--bs-danger);
+}
+
+.toolbar {
+  position: relative;
+  z-index: 2;
+  margin-top: -3.5rem;
+}
+
+/* "hidden" doit l'emporter sur la classe d-flex de Bootstrap */
+.compare-bar[hidden] {
+  display: none !important;
+}
+
+/* Badges lisibles sur fond sombre (cartes et fiche détaillée) */
+.car-badge-success { color: #5ee0a0 !important; }
+.car-badge-danger  { color: #ff8a95 !important; }
+.car-badge-primary { color: #8bb9ff !important; }
+
+.compare-bar {
+  z-index: 1040;
+  max-width: calc(100% - 2rem);
+}
+
+.modal-car-img {
+  min-height: 300px;
+  max-height: 80vh;
+}
+
+/* Tuiles « motorisation » de l'accueil */
+.energy-tile {
+  height: 300px;
+}
+
+.energy-tile img {
+  transition: transform 0.6s ease;
+}
+
+.energy-tile:hover img {
+  transform: scale(1.08);
+}
+
+.energy-tile-overlay {
+  background: linear-gradient(to top, rgba(11, 15, 25, 0.92), rgba(11, 15, 25, 0.1));
+}
+
+/* ---------- 7. Services, étapes, solutions ---------- */
+.service-card {
+  transition: transform var(--mas-transition), box-shadow var(--mas-transition);
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1) !important;
+}
+
+.service-icon {
+  width: 64px;
+  height: 64px;
+  font-size: 1.75rem;
+  color: #fff;
+  background: linear-gradient(135deg, var(--bs-primary), #0a3d91);
+  box-shadow: 0 0.5rem 1rem rgba(var(--bs-primary-rgb), 0.3);
+}
+
+.feature-icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  color: var(--bs-primary);
+  background-color: var(--bs-primary-bg-subtle);
+}
+
+.step {
+  position: relative;
+  padding: 2rem 1rem 1rem;
+  border-radius: 1rem;
+  background-color: var(--bs-light);
+  height: 100%;
+}
+
+.step-number {
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--bs-dark);
+  color: #fff;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.solution-card.featured {
+  border: 2px solid var(--bs-primary) !important;
+}
+
+.monthly-result {
+  font-size: clamp(2rem, 5vw, 2.6rem);
+}
+
+.sim-thumb {
+  width: 96px;
+  height: 64px;
+  flex-shrink: 0;
+}
+
+.sim-bar {
+  height: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sim-bar > div {
+  transition: width var(--mas-transition);
+}
+
+.cta-band {
+  background:
+    radial-gradient(circle at 85% 20%, rgba(255, 255, 255, 0.15), transparent 40%),
+    linear-gradient(135deg, var(--bs-primary), #0a2a66);
+}
+
+/* ---------- 8. À propos ---------- */
+.about-img {
+  min-height: 360px;
+}
+
+.stat-number {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Frise chronologique : verticale, alternée sur grand écran */
+.timeline {
+  position: relative;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 22px;
+  width: 2px;
+  background: linear-gradient(var(--bs-primary), var(--mas-gold));
+}
+
+.timeline-item {
+  position: relative;
+  padding-left: 64px;
+  margin-bottom: 2rem;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: 0;
+  top: 0.75rem;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background-color: var(--bs-primary);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 4px solid var(--bs-dark);
+  box-shadow: 0 0 0 2px var(--bs-primary);
+}
+
+.timeline-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.timeline-year {
+  font-size: 1.5rem;
+}
+
+@media (min-width: 992px) {
+  .timeline::before {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .timeline-item {
+    width: 50%;
+    padding-left: 0;
+  }
+
+  .timeline-item.is-left {
+    padding-right: 56px;
+    text-align: right;
+  }
+
+  .timeline-item.is-right {
+    margin-left: 50%;
+    padding-left: 56px;
+  }
+
+  .timeline-item.is-left .timeline-dot {
+    left: auto;
+    right: -23px;
+  }
+
+  .timeline-item.is-right .timeline-dot {
+    left: -23px;
+  }
+}
+
+/* Galerie */
+.gallery-item {
+  aspect-ratio: 4 / 3;
+  display: block;
+  background-color: var(--bs-dark);
+  cursor: zoom-in;
+}
+
+.gallery-item img {
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.gallery-item:hover img,
+.gallery-item:focus-visible img {
+  transform: scale(1.08);
+  opacity: 0.7;
+}
+
+.gallery-zoom {
+  color: #fff;
+  font-size: 1.5rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .gallery-zoom,
+.gallery-item:focus-visible .gallery-zoom {
+  opacity: 1;
+}
+
+.lightbox-img {
+  max-height: 80vh;
+  object-fit: contain;
+  background-color: #000;
+}
+
+.lightbox-nav {
+  width: 44px;
+  height: 44px;
+}
+
+/* ---------- 9. Contact, footer, divers ---------- */
+.contact-input {
+  background-color: rgba(var(--bs-light-rgb), 0.6);
+  border-color: var(--bs-border-color-translucent);
+}
+
+.contact-input:focus {
+  border-color: var(--bs-primary);
+  box-shadow: 0 0 0 0.2rem rgba(var(--bs-primary-rgb), 0.15) !important;
+}
+
+textarea.contact-input {
+  border-radius: 1rem;
+  resize: vertical;
+}
+
+.blink {
+  font-size: 0.5rem;
+  vertical-align: middle;
+  animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0.2; }
+}
+
+.footer-link {
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  transition: color var(--mas-transition);
+}
+
+.footer-link:hover {
+  color: #fff;
+}
+
+.social-btn {
+  width: 38px;
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-to-top {
+  right: 1.5rem;
+  bottom: 1.5rem;
+  width: 48px;
+  height: 48px;
+  z-index: 1035;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity var(--mas-transition), transform var(--mas-transition), visibility var(--mas-transition);
+}
+
+.back-to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.toast-container {
+  z-index: 1090;
+}
+
+/* ---------- 10. Animations & accessibilité ---------- */
+/* Les éléments ne sont masqués que si le JS est actif (classe ajoutée par layout.js) */
+.js-reveal .reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.js-reveal .reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (max-width: 575.98px) {
+  .hero-carousel .carousel-caption {
+    bottom: 12%;
+  }
+
+  .toolbar {
+    margin-top: -2rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .js-reveal .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
